@@ -1,11 +1,13 @@
-/* Reset e Estilos Gerais */
+/* style.css */
 :root {
-  --primary: #1a1a1a;
-  --secondary: #333;
-  --accent: #ff5e5e;
-  --light: #f8f8f8;
-  --text: #333;
-  --text-light: #777;
+  --primary: #6c5ce7;
+  --primary-dark: #5649c0;
+  --secondary: #00cec9;
+  --dark: #1a1a2e;
+  --darker: #16213e;
+  --light: #f8f9fa;
+  --gray: #e2e8f0;
+  --dark-gray: #4a4a4a;
 }
 
 * {
@@ -14,269 +16,240 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
 body {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
   line-height: 1.6;
-  color: var(--text);
-  background-color: var(--light);
-  overflow-x: hidden;
 }
 
-/* Tipografia */
-h1,
-h2,
-h3 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+header {
+  background: linear-gradient(135deg, var(--darker), var(--dark));
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-h1 {
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(108, 92, 231, 0.1) 0%,
+    transparent 50%
+  );
+  z-index: 0;
+}
+
+header h1 {
   font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  line-height: 1.2;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--gray);
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contato {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.contato:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--darker);
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
   font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary);
   position: relative;
   display: inline-block;
-  margin-bottom: 2rem;
 }
 
 h2::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: var(--accent);
+  background-color: var(--primary);
 }
 
-h3 {
-  font-size: 1.5rem;
-}
-
-p {
-  margin-bottom: 1.5rem;
-  color: var(--text-light);
-}
-
-/* Layout */
-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
-      no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 8rem 2rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  max-width: 800px;
-}
-
-header p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin-bottom: 2.5rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
-section {
-  margin-bottom: 5rem;
-}
-
-/* Botões e Links */
-a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.btn {
-  display: inline-block;
-  background-color: var(--accent);
-  color: white;
-  padding: 0.8rem 1.8rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Seção Sobre */
-#sobre {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 5rem;
-}
-
-/* Seção Serviços */
-/* Seção Serviços */
 #servicos {
-  max-width: 1200px;
-  margin: 0 auto 5rem;
-  padding: 0 2rem;
   text-align: center;
-}
-
-.titulo-servico {
-  margin-bottom: 2rem;
 }
 
 .cards-servico {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .cards-servico article {
-  background: white;
+  background-color: var(--darker);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .cards-servico article:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary);
 }
 
-article {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.cards-servico h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
-article:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Seção Portfólio */
 #portifolio {
   text-align: center;
 }
 
-/* Seção Contato */
-#contato {
-  text-align: center;
-  background-color: var(--primary);
-  color: white;
-  padding: 4rem 2rem;
-  border-radius: 8px;
-}
-
-#contato h2 {
-  color: white;
-}
-
-#contato p {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-#contato .btn {
-  margin-top: 1.5rem;
-  background-color: white;
-  color: var(--primary);
-}
-
 .galeria-videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin: 3rem 0;
 }
 
-.contato {
-  padding-bottom: 5px;
-  padding-top: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+.video-item {
+  position: relative;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
   border-radius: 10px;
-  background-color: #f8f8f8;
-  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+  transform: scale(1.02);
 }
 
 .video-item iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 8px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  border: none;
 }
 
-/* Footer */
+.btn-portfolio {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
+  margin-top: 1rem;
+}
+
+.btn-portfolio:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+#contato {
+  text-align: center;
+  background-color: var(--darker);
+  border-radius: 10px;
+  margin: 2rem auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--dark);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background-color: #00b5b2;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 206, 201, 0.3);
+}
+
 footer {
   text-align: center;
   padding: 2rem;
-  background-color: var(--secondary);
-  color: white;
-}
-
-footer p {
-  margin-bottom: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-footer a {
-  color: white;
-  margin: 0 0.5rem;
+  background-color: var(--darker);
+  color: var(--gray);
+  font-size: 0.9rem;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
+  header {
+    padding: 4rem 1rem;
+  }
+
   header h1 {
     font-size: 2rem;
   }
 
-  header p {
-    font-size: 1rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
+  section {
+    padding: 3rem 1rem;
   }
 
   .cards-servico {
-    flex-direction: column;
-  }
-
-  #servicos {
     grid-template-columns: 1fr;
   }
 }
