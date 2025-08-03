@@ -163,7 +163,7 @@ h2::after {
 
 .video-item {
   position: relative;
-  padding-bottom: 56.25%; 
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 10px;
@@ -234,6 +234,19 @@ footer {
   color: var(--gray);
   font-size: 0.9rem;
 }
+
+.instagram-link {
+  color: #e1306c; /* Cor oficial do Instagram */
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.instagram-link:hover {
+  color: #ff4e92;
+  text-shadow: 0 0 8px rgba(225, 48, 108, 0.6);
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
